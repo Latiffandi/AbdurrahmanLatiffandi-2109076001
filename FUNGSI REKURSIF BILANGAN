@@ -1,0 +1,13 @@
+def rearrange_even_odd(arr):
+    if not arr:
+        return []
+    
+    if arr[0] % 2 == 0:
+        return [arr[0]] + rearrange_even_odd(arr[1:])
+    else:
+        return rearrange_even_odd(arr[1:]) + [arr[0]]
+
+# Contoh penggunaan:
+input_list = [7, 4, 4, 3, 1, 6, 8, 6, 1, 5, 3]
+result = rearrange_even_odd(input_list)
+print("Hasil pengaturan ulang:", result)
