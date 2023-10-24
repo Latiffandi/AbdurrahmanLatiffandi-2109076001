@@ -1,0 +1,192 @@
+data_sempro = {}
+data_semhas = {}
+data_pendadaran = {}
+
+def sempro():
+    print()
+    print (40*"=")
+    print (15*"-", "Jadwal", 15*"-")
+    print (40*"=")
+
+    nim_mhs = input("Masukkan NIM Mahasiswa = ")
+    nama_mhs = input("Masukkan Nama Mahasiswa = ")
+    hari = input("Masukkan Hari = ")
+    jam = input("Masukkan Jam = ")
+    ruangan = input("Masukkan Ruangan = ")
+    judul =  input("Masukkan Judul = ")
+    pembimbing = input("Masukkan Nama Pembimbing = ")
+    penguji = input("Masukkan Penguji = ")
+
+    mahasiswa_data = {
+        "Nama": nama_mhs,
+        "Hari": hari,
+        "Jam": jam,
+        "Ruangan": ruangan,
+        "Judul": judul,
+        "Pembimbing": pembimbing,
+        "Penguji": penguji
+    }
+    
+    data_sempro[nim_mhs] = mahasiswa_data
+    print (40*"=")
+
+def semhas():
+    print()
+    print (40*"=")
+    print (15*"-", "Jadwal", 16*"-")
+    print (40*"=")
+
+    nim_mhs = input("Masukkan NIM Mahasiswa = ")
+    nama_mhs = input("Masukkan Nama Mahasiswa = ")
+    hari = input("Masukkan Hari = ")
+    jam = input("Masukkan Jam = ")
+    ruangan = input("Masukkan Ruangan = ")
+    judul =  input("Masukkan Judul = ")
+    pembimbing = input("Masukkan Nama Pembimbing = ")
+    penguji = input("Masukkan Penguji = ")
+
+    mahasiswa_data = {
+        "Nama": nama_mhs,
+        "Hari": hari,
+        "Jam": jam,
+        "Ruangan": ruangan,
+        "Judul": judul,
+        "Pembimbing": pembimbing,
+        "Penguji": penguji
+    }
+    
+    data_semhas[nim_mhs] = mahasiswa_data
+    print (40*"=")  
+
+def pendadaran():
+    print()
+    print (40*"=")
+    print (15*"-", "Jadwal", 16*"-")
+    print (40*"=")
+
+    nim_mhs = input("Masukkan NIM Mahasiswa = ")
+    nama_mhs = input("Masukkan Nama Mahasiswa = ")
+    hari = input("Masukkan Hari = ")
+    jam = input("Masukkan Jam = ")
+    ruangan = input("Masukkan Ruangan = ")
+    pembimbing = input("Masukkan Nama Pembimbing = ")
+    penguji = input("Masukkan Penguji = ")
+
+    mahasiswa_data = {
+        "Nama": nama_mhs,
+        "Hari": hari,
+        "Jam": jam,
+        "Ruangan": ruangan,
+        "Pembimbing": pembimbing,
+        "Penguji": penguji
+    }
+    
+    data_pendadaran[nim_mhs] = mahasiswa_data
+    print (40*"=") 
+
+def lihatsempro():
+    print("==========================================================================")
+    print("|---------------------------Daftar Jadwal Sempro-------------------------|")
+    
+    if len(data_sempro) <= 0:
+        print("==============================================================================")
+        print("|---------------------------Tidak Ada Data Sempro----------------------------|")
+        print("==============================================================================")
+    else:
+        no = 0
+        print(148 * "=")
+        print("| {0:^15} | {1:^15} | {2:^15} | {3:^15} | {4:^15} | {5:^15} | {6:^15} | {7:^15} |".format(
+            "NIM", "Nama", "Hari", "Jam", "Ruangan", "Judul", "Pembimbing", "Penguji"))
+        print(148 * "=") 
+
+        for nim, data in data_sempro.items():
+            no += 1
+            print(f"| {nim:^15} | {data['Nama']:^15} | {data['Hari']:^15} | {data['Jam']:^15} | {data['Ruangan']:^15} | {data['Judul']:^15} | {data['Pembimbing']:^15} | {data['Penguji']:^15} |")
+            print(148 * "=")
+
+def lihatsemhas():
+    print("==========================================================================")
+    print("|---------------------------Daftar Jadwal Semhas-------------------------|")
+    
+    if len(data_semhas) <= 0:
+        print("==============================================================================")
+        print("|---------------------------Tidak Ada Data Semhas----------------------------|")
+        print("==============================================================================")
+    else:
+        no = 0
+        print(148 * "=")
+        print("| {0:^15} | {1:^15} | {2:^15} | {3:^15} | {4:^15} | {5:^15} | {6:^15} | {7:^15} |".format(
+            "NIM", "Nama", "Hari", "Jam", "Ruangan", "Judul", "Pembimbing", "Penguji"))
+        print(148 * "=") 
+
+        for nim, data in data_semhas.items():
+            no += 1
+            print(f"| {nim:^15} | {data['Nama']:^15} | {data['Hari']:^15} | {data['Jam']:^15} | {data['Ruangan']:^15} | {data['Judul']:^15} | {data['Pembimbing']:^15} | {data['Penguji']:^15} |")
+            print(148 * "=")
+
+def lihatpendadaran():
+    print("==========================================================================")
+    print("|---------------------------Daftar Jadwal Pendadaran-------------------------|")
+    
+    if len(data_pendadaran) <= 0:
+        print("==============================================================================")
+        print("|---------------------------Tidak Ada Data Pendadaran----------------------------|")
+        print("==============================================================================")
+    else:
+        no = 0
+        print(148 * "=")
+        print("| {0:^15} | {1:^15} | {2:^15} | {3:^15} | {4:^15} | {5:^15} | {6:^15} | ".format(
+            "NIM", "Nama", "Hari", "Jam", "Ruangan", "Pembimbing", "Penguji"))
+        print(148 * "=") 
+
+        for nim, data in data_pendadaran.items():
+            no += 1
+            print(f"| {nim:^15} | {data['Nama']:^15} | {data['Hari']:^15} | {data['Jam']:^15} | {data['Ruangan']:^15} | {data['Pembimbing']:^15} | {data['Penguji']:^15} |")
+            print(148 * "=")
+
+def menu() :
+    print (38*"=")
+    print (11*"-", "Selamat Datang", 11*"-")
+    print (38*"=")
+    print (11*"-", "Data Mahasiswa", 11*"-")
+    print (38*"=")
+    print ("[1] Sempro \n[2] Semhas \n[3] Pendadaran \n[4] Lihat Daftar \n[0] Exit")
+    x = input('Masukkan Menu [1,2,3,4,0] : ')
+    if x == "1" :
+        print()
+        print (11*"-", "Daftar Sempro", 11*"-")
+        sempro()
+    elif x == "2" :
+        print()
+        print (11*"-", "Daftar Semhas", 11*"-")
+        semhas()
+    elif x == "3" :
+        print()
+        print (11*"-", "Daftar Pendadaran", 11*"-")
+        pendadaran()
+    elif x == "4" :
+        print()
+        print ("[1] Lihat Data Sempro \n[2] Lihat Data Semhas \n[3] Lihat Data Pendadaran \n[0] Exit")
+        y = input('Masukkan Menu [1,2,3,4,0] : ')
+        if y == "1":            
+            lihatsempro()
+        elif y == '2' :
+            lihatsemhas()
+        elif y == '3' :
+            lihatpendadaran()
+    elif x == "0":
+        print("Apakah Anda Yakin ?")
+    else:
+        print("Salah Masukkan Angka \nSilahkan Masukkan Angka Dengan Benar")
+
+#Program Utama 
+
+while True :
+    menu()
+    x = (input("Kembali Ke Menu Utama? [y/n]: "))
+    if x == "y":
+        print(9*"-", "Silahkan Memilih", 9*"-")
+        print()
+    else:
+        print("Terima Kasih Telah Menggunakan Program Saya")
+        break
